@@ -1,5 +1,5 @@
 <?php
-namespace ganym\io\Multi;
+namespace ganym\io\Mulit;
 
 // 这是等会自个要写的服务
 class Worker
