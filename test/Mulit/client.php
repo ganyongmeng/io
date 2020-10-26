@@ -23,33 +23,33 @@
 	
 	//异步获取
 	//feof检查是否结束了，也可以使用swoole的定时器函数swoole_timer_tick()
-//	$r = 0;
-//	while (!feof($client)) {
-//		//接收数据包的大小
-//		var_dump(fread($client, 65535));
-//		echo $r++."\n";
-//		sleep(1);
-//	}
-
-	//验证stream_selelt函数效果
-	$read = $write = $except = null;
-	//stream_select 检查的方式根据数组 去 检测 socket状态
 	$r = 0;
 	while (!feof($client)) {
 		//接收数据包的大小
-		
-		$read[] = $client;
-		
 		var_dump(fread($client, 65535));
 		echo $r++."\n";
 		sleep(1);
-		echo "检测socket\n";
-		//返回结果，0是可用，1是正在忙状态
-		var_dump(stream_select($read, $write, $except,0));		
-
-//		foreach ($read as $value) {
-//			//code
-//		}
 	}
+
+	//验证stream_selelt函数效果
+//	$read = $write = $except = null;
+//	//stream_select 检查的方式根据数组 去 检测 socket状态
+//	$r = 0;
+//	while (!feof($client)) {
+//		//接收数据包的大小
+//
+//		$read[] = $client;
+//
+//		var_dump(fread($client, 65535));
+//		echo $r++."\n";
+//		sleep(1);
+//		echo "检测socket\n";
+//		//返回结果，0是可用，1是正在忙状态
+//		var_dump(stream_select($read, $write, $except,0));
+//
+////		foreach ($read as $value) {
+////			//code
+////		}
+//	}
 
 	

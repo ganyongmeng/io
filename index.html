@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vant test</title>
+	<!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+	<!-- 引入样式文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.9/lib/index.css"/>
+
+	<!-- 引入 Vue 和 Vant 的 JS 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vant@2.9/lib/vant.min.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<van-button plain type="info" @click="showToast">朴素按钮</van-button>
+	</div>
+
+</body>
+
+<script>
+  // 在 #app 标签下渲染一个按钮组件
+  new Vue({
+    el: '#app',
+
+    data:{},
+    methods: {
+    	showToast:function(){
+    		vant.Toast('点击按钮提示');
+    	}
+    }
+  });
+
+  // 调用函数组件，弹出一个 Toast
+  
+
+  // 通过 CDN 引入时不会自动注册 Lazyload 组件
+  // 可以通过下面的方式手动注册
+  Vue.use(vant.Lazyload);
+</script>
+</html>
