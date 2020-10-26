@@ -1,0 +1,17 @@
+{
+    "name": "ganym/io",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Devin.ganym",
+            "email": "ganyongmeng@qq.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+	    "ganym\\io\\":"./src"
+	}
+    },
+    "require": {}
+}
